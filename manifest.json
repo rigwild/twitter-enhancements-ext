@@ -1,0 +1,32 @@
+{
+  "name": "Twitter Enhancements",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Add some features to twitter.",
+  "homepage_url": "https://github.com/rigwild/twitter-enhancements-ext",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "downloads"
+  ],
+  "background" : {
+    "persistent": false,
+		"scripts" : [
+      "src/background/background.js"
+    ]
+	},
+  "content_scripts": [
+    {
+      "matches": [
+        "*://twitter.com/*",
+        "*://*.twimg.com/*"
+      ],
+      "js": [
+        "src/content/content.js"
+      ]
+    }
+  ]
+}
